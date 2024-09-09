@@ -1,8 +1,11 @@
 # Lista över alla varor
 hamburgers = {"Cheeseburger": 20, "Naturell": 10}
 
+sides = ["Liten Pommes": 10, "Mellan Pommes": 15, "Stor Pommes": 20]
+
 drinks = ["Coca-Cola", "Fanta", "Sprite", "Vatten"]
 sizes = ["Liten", "Mellan", "Stor"]
+
 
 # Listar priser per storlek
 size_price = {"Liten": 10,
