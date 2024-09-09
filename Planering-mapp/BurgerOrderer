@@ -1,8 +1,16 @@
-#Beställning = input("Välkommen kära kund, vad får du lov att vara?: ")
-
-# Lista över alla hamburgare
+# Lista över alla varor
 hamburgers = {"Cheeseburger": 20, "Naturell": 10}
 
-# Skriver ut hamburgarna
+drinks = ["Coca-Cola", "Fanta", "Sprite", "Vatten"]
+sizes = ["Liten", "Mellan", "Stor"]
+size_price = {"Liten": 10,
+              "Mellan": 15,
+              "Stor": 20}
+
+for drink in drinks:
+    for size in sizes:
+        print(f"{size} {drink}: {size_price[size]} kr")
+
+# Skriver ut hamburgarna med priser
 for burger, price in hamburgers.items():
     print(f"{burger}: {price} kr")
