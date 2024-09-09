@@ -1,0 +1,6 @@
+# Lista över alla hamburgare
+hamburgers = {"Cheeseburger": 20, "Naturell": 10}
+
+# Skriver ut hamburgarna
+for burger, price in hamburgers:
+    print(burger)
