@@ -1,0 +1,6 @@
+# Lista över alla hamburgare
+hamburgers = ["Cheeseburger", "Naturell"]
+
+# Skriver ut hamburgarna
+for burger in hamburgers:
+    print(burger)
