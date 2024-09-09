@@ -3,10 +3,13 @@ hamburgers = {"Cheeseburger": 20, "Naturell": 10}
 
 drinks = ["Coca-Cola", "Fanta", "Sprite", "Vatten"]
 sizes = ["Liten", "Mellan", "Stor"]
+
+# Listar priser per storlek
 size_price = {"Liten": 10,
               "Mellan": 15,
               "Stor": 20}
 
+#Printar varje drink med sitt pris beroende på storlek
 for drink in drinks:
     for size in sizes:
         print(f"{size} {drink}: {size_price[size]} kr")
