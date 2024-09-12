@@ -3,5 +3,20 @@ Ingenjörsdagbok - Wille Norman
 Börjat få ihop git commandon, var struligt med olika branches i början men har lärt mig hur man rebasear och/eller mergear
 branches. Började även skapa filer snabbt direkt i terminalen med antingen cat kommandot eller nano för textediting. 
 
+12/09/24
+-
+Today we delegated the work like so:
+Albin: BurgerOrderer frontend
+Adde: Kitchenview frontend
+Wille: Backend and database research
 
+My goal today is to research how we are going to develop the backend. Since the frontends are being written in HTML/Javascript I think node.js / express.js is the best fit. As for the database, MySQL seems like the most simple choice. 
+
+I started with asking an AI for pointers which led me to researching front-backend communication with Javascript (AJAX/Fetch).
+
+I learned how the server acts as a middleman. AJAX is used to send/receive data (P0ST and GET method) to a node.js/express.js server. Express.js is used to handle the HTTP requests and store data, as well as serve the html files with said data.
+
+I managed to connect two frontends with a node.js server to send and receive simple messages. I used P0ST/GET requests with fetch on a shared route with the server((app.get(‘route’, (req, res)). 
+
+So far, the data is stored and shared with variables, which is not ideal. Therefore we will need to learn how to use mySQL and create a persistent database.
 
