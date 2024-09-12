@@ -1,3 +1,6 @@
 Ingenjörsdagbok - Albin Brahimi
 2024-09-09
 Vi har börjat få en aning om hur man använder Git och GitHub samt hur Docker fungerar. Vi var dock osäkra på hur vi skulle börja med projektet så vi kom fram till att börja med att göra listor av menyn som mat, drickor, storlekar, och priser. Vi har också börjat försöka planera och delegera arbetet för framtiden. 
+
+2024-09-12
+Efter mycket snack och lite hjälp från Mikael Svahnberg så listade vi ut hur vi skulle gå tillväga med projektet. Vi beslutade att börja med FrontEnd/Design samt lära oss hur man sätter upp en databas. Jag och Ardian började med att göra FrontEnd/Design och Wille började med databasen.  
