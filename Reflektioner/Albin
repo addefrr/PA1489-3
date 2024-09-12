@@ -4,3 +4,4 @@ Vi har börjat få en aning om hur man använder Git och GitHub samt hur Docker 
 
 2024-09-12
 Efter mycket snack och lite hjälp från Mikael Svahnberg så listade vi ut hur vi skulle gå tillväga med projektet. Vi beslutade att börja med FrontEnd/Design samt lära oss hur man sätter upp en databas. Jag och Ardian började med att göra FrontEnd/Design och Wille började med databasen.  
+Jag lyckades koda fram en FrontEnd med HTML för vår BurgerOrderer. Min nuvarande kod har mycket utrymme för utveckling och kan justeras enkelt utan att förstöra koden. Koden ebjuder en grundläggande men funktionell webbsida för en restaurang där användare kan se en meny, anpassa sina beställningar och göra beställningar genom en enkel och tydlig layout.
