@@ -16,3 +16,14 @@ och html. Planen är då att jag och Albin ska designa en prototyp av BurgerOrde
 Jag gjorde en enkel skiss för hur jag förväntar mig att Kitchenview kommer att se ut, och har därefter skrivit simpel html kod med css för det. använde mig av w3schools för att göra designen
 men kommer att behöva lära mig mer om html och css för att styla till det bättre. Det var relativt enkelt att använda, men på grund av min brist på erfarenhet av html och css tog det lång tid att lösa.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2024-09-16
+
+I have studied html, css and js to understand the languages and how to create a useable frontend for our kitchenview. Has been a simple day with just learning,
+but i'm planning to update kitchenview tomorrow to make it work together with a prototype of the backend.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2024-09-17
+
+Today I am planning to make the Kitchenview more interactive and work together with a prototype of the backend. I will then also work on making clear instructions on how to
+connect it with a database, so that the backend guy (Wille) will be able to test his work on a proper frontend.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
