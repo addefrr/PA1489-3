@@ -18,13 +18,13 @@ def get_data():
     return jsonify(shared_data)  # Return the stored data as JSON
 
 # Serving the Frontend A and Frontend B HTML pages
-@app.route('/frontendA')
-def frontend_a():
-    return render_template('frontendA.html')
+@app.route('/burgerorderer')
+def burgerorderer():
+    return render_template('burgerorderer.html')
 
-@app.route('/frontendB')
-def frontend_b():
-    return render_template('frontendB.html')
+@app.route('/kitchenview')
+def kitchenview():
+    return render_template('kitchenview.html')
 
 # Run the Flask server
 if __name__ == '__main__':

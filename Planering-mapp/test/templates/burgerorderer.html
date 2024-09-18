@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurgerOrderer</title>
+</head>
+<body>
+    <h1>BurgerOrderer</h1>
+    
+    <!-- Buttons to select different burgers -->
+    <button id="burgerButton" onclick="selectItem('Burger')">Burger</button>
+    <button id="cheeseBurgerButton" onclick="selectItem('CheeseBurger')">CheeseBurger</button>
+    <button id="doubleBurgerButton" onclick="selectItem('DoubleBurger')">DoubleBurger</button>
+
+    <!-- Input field for comments (special requests) -->
+    <input type="text" id="message" placeholder="Special requests?">
+
+    <!-- Checkbox for pickup and delivery options -->
+    <input type="checkbox" id="pickup" name="Pickup" value="Pickup">
+    <label for="pickup">Pickup</label>
+    <input type="checkbox" id="delivery" name="Delivery" value="Delivery">
+    <label for="delivery">Delivery</label>
+
+    <!-- Button to finish the order and send the selected item + comment -->
+    <button onclick="finishOrder()">Finish Order</button>
+
+    <p id="selectedItem">No item selected</p>
+
+    <script>
+        let selectedItem = "";  // Variable to store the selected item
+
+        function selectItem(item) {
+            selectedItem = item;
+            document.getElementById('selectedItem').innerText = 'Selected item: ' + item;
+        }
+
+        function finishOrder() {
+            if (!selectedItem) {
+                alert('Please select an item first!');
+                return;
+            }
+
+            const comment = document.getElementById('message').value;  // Get the comment from input field
+            const pickup = document.getElementById('pickup').checked ? 'Pickup' : '';  // Get the pickup status
+            const delivery = document.getElementById('delivery').checked ? 'Delivery' : '';  // Get the delivery status
+
+            // Send selected item and comment to the server
+            fetch('/send-data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ item: selectedItem, comment: comment, pickup: pickup, delivery: delivery })  // Send item, comment, and pickup status
+            })
+            .then(response => response.json())
+            .then(() => alert('Order finished: ' + selectedItem + ' sent with comment: ' + comment + (pickup ? ' and marked for pickup.' : '') + (delivery ? ' and marked for delivery.' : '')));
+        }
+    </script>
+</body>
+</html>
