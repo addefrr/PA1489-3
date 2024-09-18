@@ -1,7 +1,11 @@
 Ingenjörsdagbok - Albin Brahimi
 2024-09-09
-Vi har börjat få en aning om hur man använder Git och GitHub samt hur Docker fungerar. Vi var dock osäkra på hur vi skulle börja med projektet så vi kom fram till att börja med att göra listor av menyn som mat, drickor, storlekar, och priser. Vi har också börjat försöka planera och delegera arbetet för framtiden. 
+We have started to get some idea of how to use Git and GitHub as well as how Docker works. However, we were unsure how to start the project so we came to begin by making lists of the menu such as food, drinks, sizes, and prices. We have also begun to try to plan and delegate the work for the future. 
 
 2024-09-12
-Efter mycket snack och lite hjälp från Mikael Svahnberg så listade vi ut hur vi skulle gå tillväga med projektet. Vi beslutade att börja med FrontEnd/Design samt lära oss hur man sätter upp en databas. Jag och Ardian började med att göra FrontEnd/Design och Wille började med databasen.  
-Jag kodade fram en FrontEnd med HTML/CSS för vår BurgerOrderer. Min nuvarande kod har mycket utrymme för utveckling och kan justeras enkelt utan att förstöra koden. Koden ebjuder en grundläggande webbsida för en restaurang där användare kan se en meny, anpassa sina beställningar och göra beställningar genom en enkel och tydlig layout.
+After a lot of talk and some help from Mikael Svahnberg, we figured out how to proceed with the project. We decided to start with FrontEnd / Design and learn how to set up a database. Ardian and I started by doing FrontEnd / Design and Wille started with the database.  
+I encoded a FrontEnd with HTML / CSS for our BurgerOrderer. My current code has a lot of room for development and can be easily adjusted without destroying the code. The code offers a basic website for a restaurant where users can see a menu, customize their orders and place orders through a simple and clear layout.
+
+2024-09-18
+We decided to start over with BurgerOrderer and KitchenView because we had spent too much time on design which is not important according to Mikael Svahnberg. He believes that functionality should be prioritized first, so that is what we are going for.
+We also agreed to use Flask to send orders from BurgerOrderer to KitchenView.
