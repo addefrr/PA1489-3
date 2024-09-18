@@ -19,4 +19,14 @@ I learned how the server acts as a middleman. AJAX is used to send/receive data 
 I managed to connect two frontends with a node.js server to send and receive simple messages. I used P0ST/GET requests with fetch on a shared route with the server((app.get(‘route’, (req, res)). 
 
 So far, the data is stored and shared with variables, which is not ideal. Therefore we will need to learn how to use mySQL and create a persistent database.
+-
+18/09-24
 
+Today we are working together to make sure everyone has a feel about how our structure looks, and how the communication between all of our files work.
+Contrary to my previous journal update, we've decided to go with Flask in python instead of my previous javascript backend. Surprisingly the code 
+seemed very alike, and we are still using the P0ST and GET methods through a shared route with the server. As I understand it now, the server simply sends the most recent stored data from A to B,
+so we have to figure out how to first send the data through a database so we can store and possibly choose what data to send to the kitchen.
+
+We've also decided that the easiest and most efficient way to go forward with the burgerorderer is to simply have buttons for the selection of items, and have an optional comment input if the customer
+would like to remove/add something on their burgers. For that we need to figure out how we can store multiple choices in an order before it gets sent to the server.
+-   
