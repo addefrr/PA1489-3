@@ -1,4 +1,4 @@
-Ingenjörsdagbok - Albin Brahimi
+Engineering Diary - Albin Brahimi
 2024-09-09
 We have started to get some idea of how to use Git and GitHub as well as how Docker works. However, we were unsure how to start the project so we came to begin by making lists of the menu such as food, drinks, sizes, and prices. We have also begun to try to plan and delegate the work for the future. 
 
@@ -7,5 +7,5 @@ After a lot of talk and some help from Mikael Svahnberg, we figured out how to p
 I encoded a FrontEnd with HTML / CSS for our BurgerOrderer. My current code has a lot of room for development and can be easily adjusted without destroying the code. The code offers a basic website for a restaurant where users can see a menu, customize their orders and place orders through a simple and clear layout.
 
 2024-09-18
-We decided to start over with BurgerOrderer and KitchenView because we had spent too much time on design which is not important according to Mikael Svahnberg. He believes that functionality should be prioritized first, so that is what we are going for.
+We decided to start over with BurgerOrderer and KitchenView because we had spent too much time on FrontEnd / Design which makes it unnecessarily more difficult for us. Design is not as important as functionality according to Mikael Svahnberg, so that is what we are going for instead.
 We also agreed to use Flask to send orders from BurgerOrderer to KitchenView.
