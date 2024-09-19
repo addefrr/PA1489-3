@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport setting for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title that appears in the browser tab -->
+    <title>KitchenView</title>
+</head>
+<body>
+    <!-- Main heading of the Kitchen View -->
+    <h1>KitchenView</h1>
+
+    <!-- Button to trigger the getData() function to receive orders -->
+    <button onclick="getData()">Receive Orders</button>
+
+    <!-- Placeholder text to display the received data or a default message if no orders exist -->
+    <p id="receivedData">No orders yet</p>
+
+    <script>
+        // Function to fetch order data from the server
+        function getData() {
+            // Use fetch to request order data from the '/get-data' endpoint
+            fetch('/get-data')
+            // Convert the response to JSON format
+            .then(response => response.json())
+            // Handle the received data
+            .then(data => {
+                console.log('Data received from server:', data);  // Log the received data for debugging purposes
+                
+                // Check if the data contains an item (i.e., a valid order)
+                if (data && data.item) {
+                    // Variable to store whether the order is for Pickup, Delivery, or both
+                    let pickupOrDelivery = '';
+
+                    // Check if the order is for pickup and append 'Pickup' to the string
+                    if (data.pickup) {
+                        pickupOrDelivery += 'Pickup';
+                    }
+
+                    // Check if the order is for delivery and append 'Delivery' to the string
+                    // If both pickup and delivery are chosen, join them with "and"
+                    if (data.delivery) {
+                        pickupOrDelivery += (pickupOrDelivery ? ' and ' : '') + 'Delivery';
+                    }
+
+                    // Check if a side is included in the order. If there is a side, display it; otherwise, show "with no sides"
+                    const side = data.side ? ' with side: ' + data.side : ' with no sides';
+
+                    // Display the received order, including the item, sides, special request, and pickup/delivery status
+                    document.getElementById('receivedData').innerText = 
+                        'Received order: ' + data.item + side + '\nSpecial request: ' + (data.comment || 'None') + 
+                        (pickupOrDelivery ? '\n' + pickupOrDelivery : '');
+
+                } else {
+                    // If no order data is received, display a message indicating that no orders have been received
+                    document.getElementById('receivedData').innerText = 'No orders received';
+                }
+            })
+            // Catch and handle any errors that occur during the fetch operation
+            .catch(error => {
+                console.error('Error fetching data:', error);  // Log the error for debugging purposes
+                // Display an error message in the UI if fetching data fails
+                document.getElementById('receivedData').innerText = 'Error fetching orders';
+            });
+        }
+    </script>
+</body>
+</html>
