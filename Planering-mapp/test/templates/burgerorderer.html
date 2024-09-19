@@ -9,6 +9,7 @@
     <h1>BurgerOrderer</h1>
     
     <!-- Buttons to select different burgers -->
+    <p>Select Burger</p>
     <button id="burgerButton" onclick="selectItem('Burger')">Burger</button>
     <button id="cheeseBurgerButton" onclick="selectItem('CheeseBurger')">CheeseBurger</button>
     <button id="doubleBurgerButton" onclick="selectItem('DoubleBurger')">DoubleBurger</button>
@@ -16,7 +17,7 @@
     <!-- Input field for comments (special requests) -->
     <input type="text" id="message" placeholder="Special requests?">
 
-    <!-- Checkbox for pickup and delivery options -->
+    <!-- Radio buttons for pickup and delivery options -->
     <input type="radio" id="pickup" name="orderType" value="Pickup">
     <label for="pickup">Pickup</label>
     <input type="radio" id="delivery" name="orderType" value="Delivery">
@@ -27,32 +28,57 @@
 
     <p id="selectedItem">No item selected</p>
 
-    <script>
-        let selectedItem = "";  // Variable to store the selected item
+    <!-- Sides options -->
+    <p>Select Sides</p>
+    <button id="friesButton" onclick="selectSide('Fries')">Fries</button>
+    <button id="largeFriesButton" onclick="selectSide('Large Fries')">Large Fries</button>
+    <button id="cheesyFriesButton" onclick="selectSide('Cheesy Fries')">Cheesy Fries</button>
 
+    <script>
+        let selectedItem = "";  // Variable to store the selected burger
+        let selectedSide = "";  // Variable to store the selected side
+
+        // Function to select a burger
         function selectItem(item) {
             selectedItem = item;
             document.getElementById('selectedItem').innerText = 'Selected item: ' + item;
         }
 
+        // Function to select a side
+        function selectSide(side) {
+            selectedSide = side;
+            document.getElementById('selectedItem').innerText += ' with side: ' + side;
+        }
+
         function finishOrder() {
             if (!selectedItem) {
-                alert('Please select an item first!');
+                alert('Please select a burger first!');
                 return;
             }
 
             const comment = document.getElementById('message').value;  // Get the comment from input field
-            const pickup = document.getElementById('pickup').checked ? 'Pickup' : '';  // Get the pickup status
-            const delivery = document.getElementById('delivery').checked ? 'Delivery' : '';  // Get the delivery status
+            const pickup = document.querySelector('input[name="orderType"]:checked')?.value === 'Pickup' ? 'Pickup' : '';
+            const delivery = document.querySelector('input[name="orderType"]:checked')?.value === 'Delivery' ? 'Delivery' : '';
 
-            // Send selected item and comment to the server
+            if (!pickup && !delivery) {
+                alert('Please select either Pickup or Delivery!');
+                return;
+            }
+
+            // Send selected item, side, comment, and order type (pickup or delivery) to the server
             fetch('/send-data', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ item: selectedItem, comment: comment, pickup: pickup, delivery: delivery })  // Send item, comment, and pickup status
+                body: JSON.stringify({
+                    item: selectedItem,
+                    side: selectedSide,
+                    comment: comment,
+                    pickup: pickup,
+                    delivery: delivery
+                })  // Send item, side, comment, and order type
             })
             .then(response => response.json())
-            .then(() => alert('Order finished: ' + selectedItem + ' sent with comment: ' + comment + (pickup ? ' and marked for pickup.' : '') + (delivery ? ' and marked for delivery.' : '')));
+            .then(() => alert('Order finished: ' + selectedItem + (selectedSide ? ' with ' + selectedSide : '') + ' sent with comment: ' + comment + (pickup ? ' and marked for pickup.' : '') + (delivery ? ' and marked for delivery.' : '')));
         }
     </script>
 </body>

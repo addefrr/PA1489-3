@@ -24,9 +24,12 @@
                     if (data.delivery) {
                         pickupOrDelivery += (pickupOrDelivery ? ' and ' : '') + 'Delivery';
                     }
-                    
+
+                    // Check if a side is included in the order
+                    const side = data.side ? ' with side: ' + data.side : ' with no sides';
+
                     document.getElementById('receivedData').innerText = 
-                        'Received order: ' + data.item + '\nSpecial request: ' + (data.comment || 'None') + 
+                        'Received order: ' + data.item + side + '\nSpecial request: ' + (data.comment || 'None') + 
                         (pickupOrDelivery ? '\n' + pickupOrDelivery : '');
                 } else {
                     document.getElementById('receivedData').innerText = 'No orders received';
