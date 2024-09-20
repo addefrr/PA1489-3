@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page title that appears in the browser tab -->
     <title>KitchenView</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 <body>
     <!-- Main heading of the Kitchen View -->
     <h1>KitchenView</h1>
 
     <!-- Button to trigger the getData() function to receive orders -->
-    <button onclick="getData()">Receive Orders</button>
+    <button class="button" onclick="getData()">Receive Orders</button>
 
     <!-- Placeholder text to display the received data or a default message if no orders exist -->
     <p id="receivedData">No orders yet</p>

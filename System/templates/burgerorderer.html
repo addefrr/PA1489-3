@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page title that appears in the browser tab -->
     <title>BurgerOrderer</title>
+    <!-- Correct placement of the link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <!-- Main heading of the Burger Order page -->
@@ -14,37 +16,32 @@
     <!-- Section for selecting a burger -->
     <p>Select Burger</p>
     <!-- Button for selecting a regular Burger -->
-    <button id="burgerButton" onclick="selectItem('Burger')">Burger</button>
+    <button id="burgerButton" class="button" onclick="selectItem('Burger')">Burger</button>
     <!-- Button for selecting a CheeseBurger -->
-    <button id="cheeseBurgerButton" onclick="selectItem('CheeseBurger')">CheeseBurger</button>
+    <button id="cheeseBurgerButton" class="button" onclick="selectItem('CheeseBurger')">CheeseBurger</button>
     <!-- Button for selecting a DoubleBurger -->
-    <button id="doubleBurgerButton" onclick="selectItem('DoubleBurger')">DoubleBurger</button>
+    <button id="doubleBurgerButton" class="button" onclick="selectItem('DoubleBurger')">DoubleBurger</button>
 
     <!-- Input field to enter special requests (comments) -->
     <input type="text" id="message" placeholder="Special requests?">
 
     <!-- Section for choosing between Pickup and Delivery using radio buttons -->
-    <!-- Radio button for Pickup option -->
     <input type="radio" id="pickup" name="orderType" value="Pickup">
     <label for="pickup">Pickup</label>
-    <!-- Radio button for Delivery option -->
     <input type="radio" id="delivery" name="orderType" value="Delivery">
     <label for="delivery">Delivery</label>
 
     <!-- Button to finalize the order and send the data (burger + side + comment) -->
-    <button onclick="finishOrder()">Finish Order</button>
+    <button class="red_button" onclick="finishOrder()">Finish Order</button>
 
     <!-- Paragraph element to display the selected burger and side -->
     <p id="selectedItem">No item selected</p>
 
     <!-- Section for selecting sides -->
     <p>Select Sides</p>
-    <!-- Button to select Fries as a side -->
-    <button id="friesButton" onclick="selectSide('Fries')">Fries</button>
-    <!-- Button to select Large Fries as a side -->
-    <button id="largeFriesButton" onclick="selectSide('Large Fries')">Large Fries</button>
-    <!-- Button to select Cheesy Fries as a side -->
-    <button id="cheesyFriesButton" onclick="selectSide('Cheesy Fries')">Cheesy Fries</button>
+    <button id="friesButton" class="button" onclick="selectSide('Fries')">Fries</button>
+    <button id="largeFriesButton" class="button" onclick="selectSide('Large Fries')">Large Fries</button>
+    <button id="cheesyFriesButton" class="button" onclick="selectSide('Cheesy Fries')">Cheesy Fries</button>
 
     <script>
         let selectedItem = "";  // Variable to store the selected burger

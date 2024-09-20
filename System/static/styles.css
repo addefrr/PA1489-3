@@ -1,0 +1,43 @@
+.button {
+    background-color: #04AA6D;  /* Green background */
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;  /* Pointer/hand icon on hover */
+}
+
+.button:active {
+    background-color: #3e8e41;
+    transform: translateY(4px);
+}
+
+.red_button {
+    background-color: #aa0404;  /* Red background */
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;  /* Pointer/hand icon on hover */
+}
+
+.red_button:active {
+    background-color: #aa0404;
+    transform: translateY(4px);
+}
+
+
+#message {
+    width: 125px; /* Change this value to adjust the width */
+    height: 5px; /* Change this value to adjust the height */
+    padding: 10px; /* Optional: add padding inside the input field */
+    font-size: 16px; /* Adjust the font size */
+}
