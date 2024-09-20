@@ -1,59 +1,61 @@
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
 const app = express();
-const port = 3000;
-
-// Set up middleware
+app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('public'));
 
-// Set up MySQL connection
-const connection = mysql.createConnection({
+// MySQL connection
+const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'your_password', // Replace with your MySQL root password
-    database: 'burger_orders'
+    user: 'root',  
+    password: 'AlbinArdianWille_BTH24',  
+    database: 'BurgerOrderDB'
 });
 
-connection.connect(err => {
+// Connect to MySQL
+db.connect((err) => {
     if (err) {
-        console.error('Error connecting to the database:', err);
-        return;
+        console.error('Error connecting to MySQL:', err);
+    } else {
+        console.log('Connected to MySQL');
     }
-    console.log('Connected to MySQL database');
 });
 
-// Route to handle order submissions
+// Route to handle order submission
 app.post('/send-data', (req, res) => {
     const { item, side, comment, pickup, delivery } = req.body;
-    const orderType = pickup ? 'Pickup' : 'Delivery';
-    
-    const sql = 'INSERT INTO orders (item, side, comment, order_type) VALUES (?, ?, ?, ?)';
-    connection.query(sql, [item, side, comment, orderType], (err, results) => {
+
+    const query = `INSERT INTO orders (item, side, comment, pickup, delivery) VALUES (?, ?, ?, ?, ?)`;
+    db.query(query, [item, side, comment, pickup ? 1 : 0, delivery ? 1 : 0], (err, result) => {
         if (err) {
-            console.error('Error inserting order into database:', err);
-            res.status(500).send('Error processing order');
-            return;
+            console.error('Error inserting order:', err);
+            res.status(500).json({ error: 'Failed to submit order' });
+        } else {
+            res.status(200).json({ message: 'Order submitted successfully' });
         }
-        res.json({ success: true });
     });
 });
 
-// Route to retrieve the most recent order
+// Route to fetch the latest order
 app.get('/get-data', (req, res) => {
-    const sql = 'SELECT * FROM orders ORDER BY created_at DESC LIMIT 1';
-    connection.query(sql, (err, results) => {
+    const query = `SELECT * FROM orders ORDER BY created_at DESC LIMIT 1`;
+    db.query(query, (err, result) => {
         if (err) {
-            console.error('Error retrieving order from database:', err);
-            res.status(500).send('Error fetching orders');
-            return;
+            console.error('Error fetching orders:', err);
+            res.status(500).json({ error: 'Failed to fetch order' });
+        } else if (result.length > 0) {
+            res.status(200).json(result[0]);
+        } else {
+            res.status(200).json({ message: 'No orders found' });
         }
-        res.json(results[0] || {});
     });
 });
 
 // Start the server
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
