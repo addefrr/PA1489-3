@@ -1,0 +1,82 @@
+<title>BurgerOrderer</title>
+</head>
+
+
+<body>
+    <h1>BurgerOrderer</h1>
+
+    <p>Select Burger</p>
+    <button onclick="selectItem('Burger')">Burger</button>
+    <button onclick="selectItem('CheeseBurger')">CheeseBurger</button>
+    <button onclick="selectItem('DoubleBurger')">DoubleBurger</button>
+
+    <input type="text" id="message" placeholder="Special requests?">
+
+    <p>
+        <input type="radio" id="pickup" name="orderType" value="Pickup">
+        <label for="pickup">Pickup</label>
+        <input type="radio" id="delivery" name="orderType" value="Delivery">
+        <label for="delivery">Delivery</label>
+    </p>
+
+
+    <p id="selectedItem">No item selected</p>
+
+    <p>Select Sides</p>
+    <button onclick="selectSide('Fries')">Fries</button>
+    <button onclick="selectSide('Large Fries')">Large Fries</button>
+    <button onclick="selectSide('Cheesy Fries')">Cheesy Fries</button>
+
+    <hr>
+
+    <button onclick="finishOrder()">Finish Order</button>
+
+    <script>
+        let selectedItem = "";
+        let selectedSide = "";
+
+        function selectItem(item) {
+            selectedItem = item;
+            document.getElementById('selectedItem').innerText = 'Selected item: ' + item;
+        }
+
+        function selectSide(side) {
+            selectedSide = side;
+            document.getElementById('selectedItem').innerText += ' with side: ' + side;
+        }
+
+        function finishOrder() {
+            if (!selectedItem) {
+                alert('Please select a burger first!');
+                return;
+            }
+
+            const comment = document.getElementById('message').value;
+            const orderType = document.querySelector('input[name="orderType"]:checked')?.value;
+
+            if (!orderType) {
+                alert('Please select either Pickup or Delivery!');
+                return;
+            }
+
+            fetch('/send-data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    item: selectedItem,
+                    side: selectedSide,
+                    comment: comment,
+                    order_type: orderType
+                })
+            })
+            .then(response => response.json())
+            .then(() => {
+                alert('Order finished: ' + selectedItem + 
+                    (selectedSide ? ' with ' + selectedSide : '') + 
+                    ' sent with comment: ' + comment + 
+                    ' and marked for ' + orderType + '.');
+            });
+        }
+    </script>
+</body>
+</html>
