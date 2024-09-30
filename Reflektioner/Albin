@@ -9,3 +9,6 @@ I encoded a FrontEnd with HTML / CSS for our BurgerOrderer. My current code has 
 2024-09-18
 We decided to start over with BurgerOrderer and KitchenView because we had spent too much time on FrontEnd / Design which makes it unnecessarily more difficult for us. Design is not as important as functionality according to Mikael Svahnberg, so that is what we are going for instead.
 We also agreed to use Flask to send orders from BurgerOrderer to KitchenView.
+
+2024-09-30
+Yesterday I watched almost a whole three hour long video about using MySQL as a database. I learned a lot and now know how to use it properly for the most part.
