@@ -62,4 +62,16 @@ and how to customize your html code to work together with the database.
 Today I'm planning to use what I learned yesterday and see if I can implement it into our flask server.
 We are also planning on together making an endgame plan on how we will use docker and do a solid form of debugging, to get everything done in time.
 
+The plan was made: Albin works on the debugging, Wille works on dockerizing everything and I work on making everything work with mysql database.
+
+Well, I did just that. I firstly had to clean up the code because I realized I had wrote a whole bunch of complete garbage in the javascript, half of the code was completely
+unnececary or just unused. It was also hard to understand what I had done, probably because I had googled my way to success. 
+
+Anyways, I cleaned up everything, and after doing so I could finally get to work properly on the database implementation.
+I used some code I had "made" yesterday when trying to learn mysql as a template, and then built everything upon that. 
+Making it was a whole roller coaster, at first I thought everything was on the maximum difficulty and that I was never gonna make it and should just give up,
+but a couple of headaches, google searches, and a whole gym session later I went back and it just felt, extremely easy.
+
+Later this week I will probably try to work on the documentation, while the other guys do the rest of the hard work :)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
