@@ -53,3 +53,13 @@ Today I worked on automation to make the setup simpler and easier, which I think
 
 I also added some styling to the frontends, not because it was neccecary, but because it would annoy Mikael.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2024-09-29
+Today I researched databases and how to use mysql. Found a very good video that explained how you can implement it on your flask server
+and how to customize your html code to work together with the database.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2024-09-30
+Today I'm planning to use what I learned yesterday and see if I can implement it into our flask server.
+We are also planning on together making an endgame plan on how we will use docker and do a solid form of debugging, to get everything done in time.
+
+
