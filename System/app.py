@@ -46,7 +46,7 @@ def kitchenview():
         userDetails = cur.fetchall()
         return render_template('kitchenview.html', userDetails=userDetails)
     cur.close()
-    return 'Inga beställningar att visa!'
+    return 'No orders to show!'
 
 if __name__ == '__main__':
     app.run(debug=True)
