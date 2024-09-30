@@ -23,10 +23,27 @@ So far, the data is stored and shared with variables, which is not ideal. Theref
 18/09-24
 
 Today we are working together to make sure everyone has a feel about how our structure looks, and how the communication between all of our files work.
-Contrary to my previous journal update, we've decided to go with Flask in python instead of my previous javascript backend. Surprisingly the code 
+Contrary to my previous journal update, we've decided to go with Flask in python instead of previous javascript backend. Luckily the code 
 seemed very alike, and we are still using the P0ST and GET methods through a shared route with the server. As I understand it now, the server simply sends the most recent stored data from A to B,
 so we have to figure out how to first send the data through a database so we can store and possibly choose what data to send to the kitchen.
 
 We've also decided that the easiest and most efficient way to go forward with the burgerorderer is to simply have buttons for the selection of items, and have an optional comment input if the customer
 would like to remove/add something on their burgers. For that we need to figure out how we can store multiple choices in an order before it gets sent to the server.
 -   
+22/09-24
+
+Researched docker, learned a lot about the importance of isolating environements.
+
+-
+26/09-24
+
+Learned about using MySQL as a database and how to connect it to a server to store data. 
+
+-
+30/09-24
+
+Today we gathered to discuss the plans ahead, and what more needs to be done.
+We split up todays work with Albin on debugging, Adde on the database and I started working on our containers and dockerfiles. 
+I've learned a lot about how containers and docker works. I created our dockerfiles and began on a docker-compose.yaml file, as well as re-organized a bit of our git repository. 
+
+-
