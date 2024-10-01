@@ -6,11 +6,17 @@
 <body>
     <h1>BurgerOrderer</h1>
 
-    <p>Select Burger</p>
-    <button onclick="selectItem('Burger')">Burger</button>
-    <button onclick="selectItem('CheeseBurger')">CheeseBurger</button>
-    <button onclick="selectItem('DoubleBurger')">DoubleBurger</button>
+    <p id="select"> Select Burger</p>
+    <button id="button" onclick="selectItem('Burger')">Burger</button>
+    <button id="button" onclick="selectItem('CheeseBurger')">CheeseBurger</button>
+    <button id="button" onclick="selectItem('DoubleBurger')">DoubleBurger</button>
 
+    <p id="select"> Select Sides</p>
+    <button id="button" onclick="selectSide('Fries')">Fries</button>
+    <button id="button" onclick="selectSide('Large Fries')">Large Fries</button>
+    <button id="button" onclick="selectSide('Cheesy Fries')">Cheesy Fries</button>
+
+    <p></p>
     <input type="text" id="message" placeholder="Special requests?">
 
     <p>
@@ -20,16 +26,10 @@
         <label for="delivery">Delivery</label>
     </p>
 
+    <hr>
     <p id="selectedItem">No item selected</p>
 
-    <p>Select Sides</p>
-    <button onclick="selectSide('Fries')">Fries</button>
-    <button onclick="selectSide('Large Fries')">Large Fries</button>
-    <button onclick="selectSide('Cheesy Fries')">Cheesy Fries</button>
-
-    <hr>
-
-    <button onclick="finishOrder()">Finish Order</button>
+    <button id="finish_button" onclick="finishOrder()">Finish Order</button>
 
     <script>
     let selectedItem = "";
@@ -39,6 +39,11 @@
         selectedItem = item;
         updateDisplay();
     }
+
+    function selectSide(side) {
+    selectedSide = side;
+    updateDisplay();
+}
 
     function updateDisplay() {
         let displayText = 'Selected item: ' + selectedItem;

@@ -4,19 +4,99 @@
     width: 100%;
 }
 
+#orders th:nth-child(1),
+#orders td:nth-child(1) {
+    width: 50px;
+}
+
 #orders td, #orders th {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 2px;
 }
 
 #orders tr:nth-child(even){background-color: #f2f2f2;}
-
 #orders tr:hover {background-color: #ddd;}
 
 #orders th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
+    background-color: #000000;
     color: white;
+}
+
+#finish_button {
+    background-color: #aa0404;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+#button {
+    background-color: #160b0b;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+#select {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+
+#message {
+    width: 10%;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+}
+
+input[type="radio"]:checked {
+    background: #000000;
+    border-color: #000000;
+}
+
+label {
+    margin-right: 20px;
 }
