@@ -32,18 +32,21 @@
     <button onclick="finishOrder()">Finish Order</button>
 
     <script>
-        let selectedItem = "";
-        let selectedSide = "";
+    let selectedItem = "";
+    let selectedSide = "";
 
-        function selectItem(item) {
-            selectedItem = item;
-            document.getElementById('selectedItem').innerText = 'Selected item: ' + item;
-        }
+    function selectItem(item) {
+        selectedItem = item;
+        updateDisplay();
+    }
 
-        function selectSide(side) {
-            selectedSide = side;
-            document.getElementById('selectedItem').innerText += ' with side: ' + side;
+    function updateDisplay() {
+        let displayText = 'Selected item: ' + selectedItem;
+        if (selectedSide) {
+            displayText += ' with side: ' + selectedSide;
         }
+        document.getElementById('selectedItem').innerText = displayText;
+    }
 
         function finishOrder() {
             if (!selectedItem) {
