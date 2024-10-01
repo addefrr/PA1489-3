@@ -2,19 +2,22 @@
 
     <h1>Kitchenview</h1>
 
-<table border="1">
-    <tr>
-        <th>Burger</th>
-        <th>Side</th>
-        <th>Comment</th>
-        <th>Order Type</th>
-    </tr>
-    {% for order in userDetails %}
-    <tr>
-        <td data-label="Burger">{{ order[0] }}</td>
-        <td data-label="Side">{{ order[1] }}</td>
-        <td data-label="Comment">{{ order[2] }}</td>
-        <td data-label="Order Type">{{ order[3] }}</td>
-    </tr>
-    {% endfor %}
-</table>
+    <table border="1">
+        <tr>
+            <th>Order #</th>
+            <th>Burger</th>
+            <th>Side</th>
+            <th>Comment</th>
+            <th>Order Type</th>
+        </tr>
+        {% for order in userDetails %}
+        <tr>
+            <td data-label="Order #">{{ order[0] }}</td>
+            <td data-label="Burger">{{ order[1] }}</td>
+            <td data-label="Side">{{ order[2] }}</td>
+            <td data-label="Comment">{{ order[3] }}</td>
+            <td data-label="Order Type">{{ order[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    

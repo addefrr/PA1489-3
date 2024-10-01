@@ -26,7 +26,7 @@ def send_data():
     comment = data['comment']  # Get any optional comment
     order_type = data.get('order_type', 'Pickup')  # Get order_type value, default to 'Pickup'
 
-    # Insert the order into the MySQL database with comment and order_type
+    # Insert the order into the MySQL database without burger_id (since it is AUTO_INCREMENT)
     cur = mysql.connection.cursor()  # Create a cursor to interact with the database
     cur.execute("""
         INSERT INTO orders(burger_name, side_name, comment, order_type) 
@@ -37,11 +37,12 @@ def send_data():
 
     return jsonify({'status': 'Order placed successfully!'})  # Return JSON response indicating success
 
+
 # Route to display orders in the kitchen view
 @app.route('/kitchenview')
 def kitchenview():
     cur = mysql.connection.cursor()  # Create a cursor to interact with the database
-    result_value = cur.execute("SELECT burger_name, side_name, comment, order_type FROM orders")  # Execute SQL query to fetch orders
+    result_value = cur.execute("SELECT burger_id, burger_name, side_name, comment, order_type FROM orders")  # Execute SQL query to fetch orders
     if result_value > 0:  # Check if any orders were found
         userDetails = cur.fetchall()  # Fetch all order details
         return render_template('kitchenview.html', userDetails=userDetails)  # Render the kitchen view page with order details
