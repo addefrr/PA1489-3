@@ -2,17 +2,27 @@ Engineering Diary - Albin Brahimi
 2024-09-09
 We have started to get some idea of how to use Git and GitHub as well as how Docker works. However, we were unsure how to start the project so we came to begin by making lists of the menu such as food, drinks, sizes, and prices. We have also begun to try to plan and delegate the work for the future. 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2024-09-12
 After a lot of talk and some help from Mikael Svahnberg, we figured out how to proceed with the project. We decided to start with FrontEnd / Design and learn how to set up a database. Ardian and I started by doing FrontEnd / Design and Wille started with the database.  
 I encoded a FrontEnd with HTML / CSS for our BurgerOrderer. My current code has a lot of room for development and can be easily adjusted without destroying the code. The code offers a basic website for a restaurant where users can see a menu, customize their orders and place orders through a simple and clear layout.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2024-09-18
 We decided to start over with BurgerOrderer and KitchenView because we had spent too much time on FrontEnd / Design which makes it unnecessarily more difficult for us. Design is not as important as functionality according to Mikael Svahnberg, so that is what we are going for instead.
 We also agreed to use Flask to send orders from BurgerOrderer to KitchenView.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2024-09-30
 Yesterday I watched almost a whole three hour long video about using MySQL as a database. I learned a lot and now know how to use it properly for the most part. Today I tried to learn how to use pytest for debugging with a goal of trying to create an automated testing system. Later today we managed to set up a MySQL database successfully. We also made a plan for testing / debugging of our project. 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2024-10-06
 I spent the whole week trying to further test / debugg our code and I came across several issues on the way. Since I was a complete newbie in testing / debugging code I felt overhelmed at first and did not knew where to really start so I tried different approaches which many of them failed badly. But I successfully did a commit a week ago where I did basic unit tests on the crucial parts our code, but I think it does need adjustments which I am going to discuss with our group members. I at least now have a better understanding of testing / debugging and have learned from some of my mistakes which I am going to take with me in the future. 
 The biggest part of our project is done and working so we do not have much left, except adjusting and improving what we have currently.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
