@@ -15,7 +15,7 @@ mysql = MySQL(app)  # Initialize MySQL
 
 @app.route('/')  # Define the route for the home page
 def index():
-    return render_template('burgerorderer.html')  # Render the burger order page
+    return render_template('burgerorderer/burgerorderer.html')  # Render the burger order page
 
 # Route to receive and store data from the order form
 @app.route('/send-data', methods=['POST'])
@@ -45,7 +45,7 @@ def kitchenview():
     result_value = cur.execute("SELECT burger_id, burger_name, side_name, comment, order_type FROM orders")  # Execute SQL query to fetch orders
     if result_value > 0:  # Check if any orders were found
         userDetails = cur.fetchall()  # Fetch all order details
-        return render_template('kitchenview.html', userDetails=userDetails)  # Render the kitchen view page with order details
+        return render_template('kitchenview/kitchenview.html', userDetails=userDetails)  # Render the kitchen view page with order details
     cur.close()  # Close the cursor
     return 'No orders to show!'  # Return a message if no orders are found
 
