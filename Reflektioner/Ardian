@@ -78,3 +78,6 @@ Later this week I will probably try to work on the documentation, while the othe
 After over a week of sickness i'm back together with the team. We are working hard on the debugging, together trying to find a solution. 
 Since we don't really have any good experience of debugging software this has been a hard task, and we don't really know how to go on, but we'll find a way.
 
+We discovered a way to test our project with github workflows, something i don't really understand how it works but it does so we are very happy with it.
+
+We also discovered that we will need to dockerize everything to be able to do proper testing.
