@@ -6,7 +6,7 @@ services:
   ports:
     - 8000:8000
   volumes:
-    - ./Containers/BurgerOrderer:/app
+    - ./Containers/templates/burgerOrderer:/burgerorderer
   environment:
     KITCHENVIEW__HOST: 'kitchenview:5000'
 
@@ -17,4 +17,4 @@ services:
       - 5000:5000
     
     volumes:
-      - ./Containers/KitchenView:/app
+      - ./Containers/KitchenView:/kitchenview
