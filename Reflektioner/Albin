@@ -30,5 +30,6 @@ The biggest part of our project is done and working so we do not have much left,
 2024-10-14
 I recently switched operating system from Windows 11 to Linux. After some configuration and tinkering of my new OS I somehow managed to encounter several issues with test_app.py. I did not really have any issues until I swtiched OS, but it does not really make any sense why it shouldn't work because the code hasn't changed. The issues I had was with the imported modules like YAML, Mock etc. 
 We have planned a Discord meeting where we will continue with our project's last parts (testing / debugging and Docker). Hopefully, we will be able to solve the testing / debugging issue I came along as soon as possible.
+We found a way to successfully test / debug code through GitHub. The problem is that we are not sure if this is a way of doing it, so we will ask Mikael Svahnberg if this is fine.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
