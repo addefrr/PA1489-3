@@ -1,0 +1,20 @@
+
+services:
+  burgerorderer:
+  image: burgerorderer
+  build: ./Containers/BurgerOrderer
+  ports:
+    - 8000:8000
+  volumes:
+    - ./Containers/BurgerOrderer:/app
+  environment:
+    KITCHENVIEW__HOST: 'kitchenview:5000'
+
+  kitchenview:
+    image: kitchenview
+    build: ./Containers/KitchenView
+    ports:
+      - 5000:5000
+    
+    volumes:
+      - ./Containers/KitchenView:/app
