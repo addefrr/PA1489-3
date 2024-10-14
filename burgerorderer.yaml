@@ -2,7 +2,7 @@
 services:
   burgerorderer:
   image: burgerorderer
-  build: ./Containers/BurgerOrderer
+  build: ./Containers/templates/burgerorderer
   ports:
     - 8000:8000
   volumes:
@@ -12,7 +12,7 @@ services:
 
   kitchenview:
     image: kitchenview
-    build: ./Containers/KitchenView
+    build: ./Containers/templates/kitchenview
     ports:
       - 5000:5000
     
