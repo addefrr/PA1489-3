@@ -81,3 +81,7 @@ Since we don't really have any good experience of debugging software this has be
 We discovered a way to test our project with github workflows, something i don't really understand how it works but it does so we are very happy with it.
 
 We also discovered that we will need to dockerize everything to be able to do proper testing.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2024-10-16
+
+Today I've been working hard to dockerize everything. At this point I feel like giving up because i cant seem to get it to work.
