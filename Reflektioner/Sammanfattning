@@ -1,0 +1,30 @@
+Teammedlemmar
+Albin Brahimi
+Ardian Qeriqi
+Wille Norman
+
+Projektets Git-länk
+https://github.com/addefrr/PA1489-3.git
+
+Konfigurationshantering
+Konfigurationshantering används för att hålla reda på ändringar i projekt och dess konfigurationer, vilket hjälper till att säkerställa att alla använder samma version och miljö. Det underlättar samarbete och förhindrar konflikter i koden.
+
+Arbetsflöde med Git
+git clone: För att klona ett repo till den lokala maskinen.
+git add: För att lägga till ändringar.
+git commit: För att spara ändringarna lokalt.
+git push: SFör att skicka ändringar till GitHub.
+git pull: HFör att hämta uppdateringar från GitHub.
+
+Erfarenheter av konfigurationshantering
+Vad gick bra? 
+Vi lyckades bra med att använda Git för att spåra våra ändringar och samarbeta effektivt. Det gjorde det enklare att hantera versioner av vår kod och hålla reda på vad som ändrades.
+
+Vad gick mindre bra? 
+Vi stötte på problem med testning och databasen. Specifikt hade vi svårt att få databasen att fungera korrekt i vår Docker-miljö, vilket ledde till en hel del felmeddelanden som hindrade oss från att köra våra tester.
+
+Hur löste ni svårigheterna? 
+Vi spenderade tid på felsökning och diskussioner för att förstå problemen. Genom att arbeta tillsammans och göra ändringar i vår konfiguration kunde vi så småningom få databasen att fungera. Vi insåg också att vi borde ha planerat vår tid mycket bättre för testning och debugging.
+
+Vad lyckades ni inte lösa? 
+Trots våra ansträngningar kvarstod vissa problem med testningen, vilket gjorde det svårt att validera vår kod fullständigt. Vi insåg att vi kunde ha förberett oss bättre genom att börja med testningen tidigare i projektet.
