@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen View</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+    <h1>Kitchen View</h1>
+
+    <table id="orders" border="1">
+        <tr>
+            <th>#</th>
+            <th>Burger</th>
+            <th>Side</th>
+            <th>Comment</th>
+            <th>Order Type</th>
+        </tr>
+        {% if userDetails %}
+        {% for order in userDetails %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.burger_name }}</td>
+            <td>{{ order.side_name }}</td>
+            <td>{{ order.comment }}</td>
+            <td>{{ order.order_type }}</td>
+        </tr>
+        {% endfor %}
+        
+        {% else %}
+            <tr>
+                <td colspan="5">No orders to show!</td>
+            </tr>
+        {% endif %}
+    </table>
+</body>
+</html>

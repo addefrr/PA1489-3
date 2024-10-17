@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  burger_orderer:
+    build:
+      context: ./burger_orderer  # Ensure this path is correct
+    ports:
+      - "5000:5000"  # Adjust this if necessary
+    volumes:
+      - ./instance:/app/instance  # Mount the instance folder to persist data
+
+  kitchen_view:
+    build:
+      context: ./kitchen_view  # Ensure this path is correct
+    ports:
+      - "5001:5000"  # Adjust if needed, make sure it doesn't conflict with other services
+    volumes:
+      - ./instance:/app/instance  # Mount the instance folder to access the database

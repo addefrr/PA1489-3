@@ -33,6 +33,3 @@ We have planned a Discord meeting where we will continue with our project's last
 We found a way to successfully test / debug code through GitHub. The problem is that we are not sure if this is a way of doing it, so we will ask Mikael Svahnberg if this is fine.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-2024-10-16 
-Yesterday we changed the structure of our project because we only had one container where both KitchenView and BurgerOrderer worked together. The thing is we missed an important detail in the assignment instructions, so we had to fix it. We managed it and now have three different containers, one for the KitchenView, one for the BurgerOrderer, and one for our MySQL database. Everything is dockerized and now have little stuff left that we need to fix, like dokumentation and testing / debugging. We do not have much time left so we need to hurry a bit unfortunately. Now we also know how long things actually take.
