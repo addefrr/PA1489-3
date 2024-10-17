@@ -1,0 +1,4 @@
+flask
+flask-mysqldb
+PyYAML
+flask-sqlalchemy

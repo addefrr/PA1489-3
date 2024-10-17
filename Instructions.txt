@@ -1,6 +1,48 @@
-1. install all dependencies needed:
+Instructions for running the Burger Order System
+Prerequisites
+1. Docker: Install Docker from Docker's official website.
+2. Docker Compose: Ensure Docker Compose is installed. This typically comes with Docker Desktop.
 
-pip install -r requirements.txt
+Step-by-Step Setup
+1. Clone the Repository
+Make sure to clone the repository with all the required files:
+git clone https://github.com/addefrr/PA1489-3.git
+cd PA1489-3
 
-2. Run PA1489-3/System/ app.py
-                and startup.py
+2. Database Setup
+You have an SQLite database defined in the flaskapp_orders.sql file. To set this up:
+1. Navigate to the project directory.
+2. Ensure that the flaskapp_orders.sql file is placed in the instance folder, where the SQLite database will be initialized.
+
+3. Docker Compose Setup
+The project uses Docker Compose to set up two services: burger_orderer and kitchen_view. To build and run the containers:
+1. Open a terminal and run:
+docker-compose up --build
+This will build the images and start both services:
+- burger_orderer will be available on port 5000.
+- kitchen_view will be available on port 5001.
+
+4. Access the Services
+Burger Order Interface: Visit http://localhost:5000 to place a burger order.
+Kitchen View: Visit http://localhost:5001 to view incoming orders in the kitchen.
+
+5. Flask Applications
+Both services are built using Flask:
+- burger_orderer: Handles user orders, processes them, and stores them in an SQLite database.
+- kitchen_view: Displays all the current orders from the database for kitchen staff.
+
+6. Database Configuration
+- The SQLite database is configured to store burger orders.
+- The database model is defined in both burger_orderer and kitchen_view with a table named orders.
+- The flaskapp_orders.sql file contains the schema and initial data that can be imported into the database.
+
+7. Requirements
+Both services have requirements.txt files specifying the necessary Python dependencies:
+flask
+flask-mysqldb
+PyYAML
+flask-sqlalchemy
+These dependencies are installed in the Docker container during the build process.
+
+8. Persisting Data
+Data will persist between sessions using the instance folder, which is mounted as a volume in both containers. This ensures that the SQLite database remains available after stopping or restarting the containers.
