@@ -42,3 +42,14 @@ Yesterday we changed the structure of our project because we only had one contai
 2024-10-17
 Today we did some changes to our project, once again, by replacing our MySQL database with SQLite because we came across serious issues with our MySQL database. We also did unit tests on both burgerorderer app and kitchenview app that actually works. Now we need to do some documentation that is necessary. 
 I have experinced a lot of ups and downs in this project I must say, and I have learned a lot as well. I am sure that I am not alone on this one becuase it has been a hell of a drive the latest days. Our plan had many flaws but hopefully we will learn from this. The best way is sometimes the hard way. 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Debugging Session - BurgerOrderer & KitchenView Unittests
+We started the debugging session by examining why the BurgerOrderer tests were failing, particularly focusing on the /send-data endpoint. Wille noticed a 500 error during POST requests. Ardian and I placed breakpoints around the code handling the order data, especially focusing on the JSON payload. When monitoring the variables, we saw that the side field was missing, which led to a crash when trying to insert the data into the database.
+
+We discussed potential solutions and quickly realized we needed better validation for the incoming request. So, we added checks to ensure all required fields, such as item, side, and order_type, were present before attempting any database operations. Once we implemented this, the status code returned was 200 as expected, and the test for /send-data passed successfully.
+
+Next, we moved to testing KitchenView. This section was more straightforward, but we noticed minor issues with the way orders were being fetched. We placed breakpoints within the /get-orders API and realized some of the orders weren't being correctly retrieved due to database synchronization issues. After fixing that and rerunning the tests, we saw everything worked smoothly.
+
+Overall, this session taught us a lot about how important it is to implement proper input validation and error handling early in the process. It also highlighted how closely our services depend on each other, reinforcing the need for robust unit tests and better documentation.
