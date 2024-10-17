@@ -36,3 +36,9 @@ We found a way to successfully test / debug code through GitHub. The problem is 
 
 2024-10-16 
 Yesterday we changed the structure of our project because we only had one container where both KitchenView and BurgerOrderer worked together. The thing is we missed an important detail in the assignment instructions, so we had to fix it. We managed it and now have three different containers, one for the KitchenView, one for the BurgerOrderer, and one for our MySQL database. Everything is dockerized and now have little stuff left that we need to fix, like dokumentation and testing / debugging. We do not have much time left so we need to hurry a bit unfortunately. Now we also know how long things actually take.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2024-10-17
+Today we did some changes to our project, once again, by replacing our MySQL database with SQLite because we came across serious issues with our MySQL database. We also did unit tests on both burgerorderer app and kitchenview app that actually works. Now we need to do some documentation that is necessary. 
+I have experinced a lot of ups and downs in this project I must say, and I have learned a lot as well. I am sure that I am not alone on this one becuase it has been a hell of a drive the latest days. Our plan had many flaws but hopefully we will learn from this. The best way is sometimes the hard way. 
