@@ -1,3 +1,4 @@
+3.3
 Teammedlemmar
 Albin Brahimi
 Ardian Qeriqi
@@ -28,3 +29,85 @@ Vi spenderade tid på felsökning och diskussioner för att förstå problemen. 
 
 Vad lyckades ni inte lösa? 
 Trots våra ansträngningar kvarstod vissa problem med testningen, vilket gjorde det svårt att validera vår kod fullständigt. Vi insåg att vi kunde ha förberett oss bättre genom att börja med testningen tidigare i projektet.
+
+4.3
+1.
+Teammedlemmar
+Albin Brahimi
+Ardian Qeriqi
+Wille Norman
+
+2.
+Projektets Git-länk
+https://github.com/addefrr/PA1489-3.git
+
+
+3.
+Projektet i stort:
+Vi har implementerat ett system för att hantera burgarbeställningar genom två separata Flask-applikationer. Den ena applikationen låter användare skicka beställningar (BurgerOrderer), medan den andra visar inkomna beställningar i köket (KitchenView). Båda applikationerna delar samma SQLite-databas för att lagra och visa beställningsdata. Genom Docker Compose hanteras varje applikation i sin egen container och tjänsterna körs parallellt.
+
+Varje container:
+
+    BurgerOrderer-containern ansvarar för att hantera beställningsformuläret och skicka data till databasen. Den lyssnar på port 5000.
+    KitchenView-containern visar beställningar i köket och låter personalen se dem i realtid. Den lyssnar på port 5001 och delar databas med BurgerOrderer via en volym.
+
+Varje modul:
+
+    Flask-appar: Två Flask-applikationer implementeras, en för beställning och en för köksvisning, med en delad modell för att hantera beställningsdata.
+    SQLite-databas: En gemensam databas används av båda apparna via SQLite för att lagra och hämta beställningar.
+    Docker Compose: Sköter orkestreringen av de två separata tjänsterna och ser till att båda apparna delar samma databasmapp via volymer, samtidigt som de körs på olika portar.
+
+4.
+Vad gick bra?
+    Helheten gick som planerat, vi lyckades skapa containrar som kan prata med varandra via en databas, vilket vi är väldigt nöjda med.
+
+Vad gick mindre bra?
+    Mängder med oförklarliga buggar som vi bara löste genom att göra om hela projektet, då vi inte hittade en enklare lösning.
+
+Hur löste ni svårigheterna? Hade ni kunnat göra annorlunda?
+    Vi löste helt enkelt svårigheterna genom att börja om flera gånger. Det hade nog varit effektivare om vi hade en bättre plan, men eftersom vi lärde oss under tiden vi gjorde programmet så hade det nästan varit omöjligt att göra en bra plan i förväg.
+
+Vad lyckades ni inte lösa? Varför inte?
+    Ett automatiserat system för att starta allt. Anledningen är att vi inte listade ut hur man skulle göra det, många problem med docker som vi inte kunde få svar på.
+
+5.
+Vad gick bra?
+    Vi lyckades använda containers och dockerizea allting.
+
+Vad gick mindre bra?
+    Jag tror den stora svårigheten var att det tog extremt lång tid att få in allt i containers.
+
+Hur löste ni svårigheterna? Hade ni kunnat göra annorlunda?
+    Vi lyckades lösa svårigheterna efter många youtube tutorials. Det vi hade kunnat göra annorlunda hade varit om vi försökte använda containers redan från början av projektet, då det hade underlättat resten av projektets gång.
+
+
+
+4. 
+Kort sammanfattning om hur ni har genomfört testerna:
+Testerna utfördes genom en enhetstestsession för BurgerOrderer-applikationen. Fokus låg på funktionen test_send_data där vi använde Visual Studio Code för att sätta brytpunkter, köra stegvisa genomgångar och övervaka hur variabler ändrades. Genom att använda brytpunkter på specifika ställen i koden kunde vi följa flödet för beställningsprocessen och analysera resultaten av testordrar.
+
+5. Utskrift från er senaste testsession:
+
+    Antal tester: Vi har skrivit flera enhetstester, inklusive specifika för att hantera orderinmatning, felhantering och olika typer av orderflöden.
+    Vad de testar: Testerna fokuserade på att säkerställa att orderdata skickas korrekt, att systemet hanterar ofullständiga orderförsök, och att variabler i applikationen uppdateras som förväntat.
+    Resultat: I vår senaste session körde vi fem enhetstester, varav tre lyckades och två misslyckades. De misslyckade testerna uppstod främst på grund av problem med datavalidering i beställningsprocessen.
+
+6. Era erfarenheter om att skriva automatiserade enhetstester:
+
+    Vad gick bra? Vi kunde identifiera fel och problem snabbare med hjälp av enhetstester och brytpunkter, vilket gjorde att vi bättre förstod kodflödet.
+    Vad gick mindre bra? Vi hade inget välorganiserat system för testning, och vissa tester gav inte de resultat vi förväntade oss, vilket skapade frustration.
+    Hur löste ni svårigheterna? Genom att förbättra vår användning av debug-verktyg i Visual Studio Code, inklusive brytpunkter och stegvist körning, kunde vi hitta och rätta till många problem.
+    Vad lyckades ni inte lösa? Vi kunde inte fullt ut förbättra alla testresultat, särskilt på grund av problem med datavalidering och bristen på ett enhetligt testsystem.
+
+
+Individuella ingengörsdagböcker:
+
+Ardian:
+https://github.com/addefrr/PA1489-3/blob/main/Reflektioner/Ardian
+
+Albin:
+https://github.com/addefrr/PA1489-3/blob/main/Reflektioner/Albin
+
+Wille:
+https://github.com/addefrr/PA1489-3/blob/main/Reflektioner/Wille
+
