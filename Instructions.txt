@@ -41,3 +41,4 @@ These dependencies are installed in the Docker container during the build proces
 
 7. Persisting Data
 Data will persist between sessions using the instance folder, which is mounted as a volume in both containers. This ensures that the SQLite database remains available after stopping or restarting the containers.
+

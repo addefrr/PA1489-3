@@ -1,10 +1,11 @@
 Ingenjörsdagbok - Wille Norman
 
-Börjat få ihop git commandon, var struligt med olika branches i början men har lärt mig hur man rebasear och/eller mergear
-branches. Började även skapa filer snabbt direkt i terminalen med antingen cat kommandot eller nano för textediting. 
+09/09-24
 
+Vi har börjat med att lära oss git kommandon och GitHub för att samarbeta. Var mycket nytt och lite struligt med olika branches i början men har lärt mig hur git pull, add, commit, push och branches fungerar. Började även skapa filer snabbt direkt i terminalen med antingen cat kommandot eller nano för textediting, som för denna journal till exempel. 
+
+--
 12/09/24
--
 Today we delegated the work like so:
 Albin: BurgerOrderer frontend
 Adde: Kitchenview frontend
@@ -32,18 +33,77 @@ would like to remove/add something on their burgers. For that we need to figure 
 -   
 22/09-24
 
-Researched docker, learned a lot about the importance of isolating environements.
+Researched docker, learned a lot about the importance of isolating environements to make it easier to troubleshoot any errors and making sure the customer gets a working product on any system supported.
 
 -
 26/09-24
 
-Learned about using MySQL as a database and how to connect it to a server to store data. 
+Learned about using MySQL as a database and how to connect it to a server to store data. I mostly watched educational videos, and tried using it on a quick test application. 
 
 -
 30/09-24
 
 Today we gathered to discuss the plans ahead, and what more needs to be done.
 We split up todays work with Albin on debugging, Adde on the database and I started working on our containers and dockerfiles. 
-I've learned a lot about how containers and docker works. I created our dockerfiles and began on a docker-compose.yaml file, as well as re-organized a bit of our git repository. 
+
+I've learned a lot about how containers and docker works. I created our dockerfiles and began on a docker-compose.yaml file, as well as re-organized a bit of our git repository. Although it's going OK, I find a lot of the stuff confusing and am struggling to find the logical connection with some of this stuff. Im trying not to get hung up on the logic and how it works on the deepest level possible, but to focus on what works and go from there. 
 
 -
+
+2/10-24 
+
+I've had some minor problems with making sure the docker files and containers work as they should, but I've started to get a hang of it. I find myself scratching my head over what turns out to be minor problems like indentation errors, soaking time and focus. Still I have realized how useful Docker and working in containers is, and how it's almost essential for applications you send to customers around the world. 
+
+--
+
+5/10-24
+
+Today I'm going to try and dip my feet into the debugging section of the assignment. At first glance it feels kinda out of my league, but I will begin my research and do my best. One thing I've found really difficult these past days are working together as a team when you don't have any coding experience. Sometimes it feels like we are working around each other and I find it hard to apply logic and understanding to code someone else has written, mostly just in this instance where I need to learn how to test and debug it. 
+
+--
+
+12/10-24
+
+Today I'm getting kind of stressed. I got sick and haven't made any progress on my debugging. I will start where I left of and I'll be looking into making an automated script that can test different responses from our kitchen view container. 
+
+I've found out that python has a unittest module for testing python code and will continue to research its usecases.
+
+--
+
+13/10-24
+
+Getting straight back in to the creation of a test script for kitchen view. Yesterday I found out about pythons unittest module which I hope to be expanding on today. 
+I've also figured out that Flask has its own built in test functionality. You can create a test client and configure it for testing, which enables better logs and shows exceptions clearly. The test client is useful because you don't need to start a server to simulate responses. 
+
+--
+
+Debug Session 14/10- BurgerOrderer and Kitchenview
+
+I started my debug session running through unittests on BurgerOrderer and KitchenView. First of I was going to try the BurgerOrderer send requests. During the first run for BurgerOrderer I got a 500 error when my post requests should have returned 200. I stepped into the code and used Continue, step over, and started looking for where it breaks. Meanwhile Ardian and Albin had been monitoring the variables used and they noticed a fatal error causing the database to crash when receiving data. 
+
+We discussed the errors we found and decided to add some reassurance code such as checks to ensure alla required fields (order fields) were properly transmitted and saved. After adding a few lines of database instructions such as a new variable storing everything within an order id, adding and committing it to the database, I ran the test again and got 200 (OK) on all my get and send data requests.  
+
+Next I moved on to kitchenview. Ardian and Albin had already encountered an issue and seemed to have gotten it fixed.I started out with commenting every line of code, to make sure the both outside readers and I will understand it better at first glance. I ran the test script I had been working on - verifying that the get commands and database route works and responds as it should. 
+
+My tests returned two errors I hadn't faced before - operationalError "Unable to open database file". I've read up on the errors which seem to be quite common, and since it works for all of us I will assume it is not a critical error with our actual application. I've tried finding some solutions online, but to be honest they all seem super advanced so far. I've stepped in to the code and gone through the requests process but still can't seem to find a solution. Im tired and frustrated and will try again tomorrow.
+--
+
+15/10-24
+
+In my automated test for kitchenview I send get requests and make sure it returns properly. The operationalError I get has not yet been resolved and I don't know how to resolve them, which is making me quite angry and frustrated. 
+
+--
+
+18/10-24 : Journal highlights
+
+Today I'm merging with main - and editing all the merge files. It feels great to be done - we've put a lot of work into this and gone through and fixed many problems. We have learned so much with this project considering the size of it and where we were when we started.
+
+We began with learning git and understood how important it is for working together on a project. We can code in different local branches then discuss and commit changes to the core project. We use git add - commit - comment - push to update our git with changes, and pull to make sure we have everything up to date locally. We can also merge different branches to get all the changes into one. 
+
+I learned how to create a node.js application, and succeeded in doing so. Although we decided to go with Flask since that is what Mikaels example used, we figured it would be better to go with it. I still learned a lot during my node js experience. 
+
+Docker and containers are also almost essential tools for working together and having a good code structure. You can isolate environments and ensure all the dependencies are getting installed before running the application. It gets easier to troubleshoot and handle the code when they are in containers. 
+
+The debugging part was in my experience the most frustrating part simply because you don't have a clue on how to fix the errors you might get. Don't get me wrong - we managed to fix a lot by simply researching, but in the end 2 errors remained in my kitchenview test that I couldn't manage to get fixed, although god knows I tried! 
+
+I was suprised to find out that there's so many great frameworks for debugging, and in this instance we used pythons module unittests and flasks inherent support for testing. 
