@@ -14,8 +14,8 @@ Arbetsflöde med Git
 git clone: För att klona ett repo till den lokala maskinen.
 git add: För att lägga till ändringar.
 git commit: För att spara ändringarna lokalt.
-git push: SFör att skicka ändringar till GitHub.
-git pull: HFör att hämta uppdateringar från GitHub.
+git push: För att skicka ändringar till GitHub.
+git pull: För att hämta uppdateringar från GitHub.
 
 Erfarenheter av konfigurationshantering
 Vad gick bra? 
@@ -25,7 +25,7 @@ Vad gick mindre bra?
 Även om Git fungerade bra för versionshantering, hade vi vissa utmaningar med att hantera konfigurationer och beroenden mellan olika miljöer. Ibland blev det svårt att hålla konfigurationsfiler konsekventa mellan teammedlemmarnas lokala miljöer och den gemensamma utvecklingsmiljön, vilket ledde till inkonsekvenser i körning av projektet.
 
 Hur löste ni svårigheterna?
-Vi löste utmaningarna genom att vara noga med att dokumentera alla nödvändiga konfigurationsändringar i vårt versionshanteringssystem. Vi använde Git för att spåra förändringar i konfigurationsfiler och såg till att varje utvecklare uppdaterade sin miljö manuellt baserat på dessa ändringar. Genom att skapa tydliga commit-meddelanden och regelbundet kommunicera i teamet kunde vi undvika större misstag och säkerställa att alla arbetade med samma uppsättning inställningar.
+Vi löste utmaningarna genom att vara noga med att dokumentera alla nödvändiga konfigurationsändringar i vårt versionshanteringssystem. Vi använde Git för att spåra förändringar i konfigurationsfiler och såg till att vi uppdaterade vår miljö manuellt baserat på dessa ändringar. Genom att skapa tydliga commit-meddelanden och regelbundet kommunicera i teamet kunde vi undvika större misstag och säkerställa att alla arbetade med samma uppsättning inställningar.
 
 Vad lyckades ni inte lösa?
 Vi lyckades inte fullt ut automatisera alla delar av vår konfigurationshantering, vilket innebar att vissa manuella justeringar fortfarande behövde göras beroende på teammedlemmarnas lokala system. Detta ledde till viss ineffektivitet och risk för misstag vid uppdateringar.
@@ -40,7 +40,6 @@ Wille Norman
 2.
 Projektets Git-länk
 https://github.com/addefrr/PA1489-3.git
-
 
 3.
 Projektet i stort:
@@ -80,8 +79,7 @@ Vad gick mindre bra?
 Hur löste ni svårigheterna? Hade ni kunnat göra annorlunda?
     Vi lyckades lösa svårigheterna efter många youtube tutorials. Det vi hade kunnat göra annorlunda hade varit om vi försökte använda containers redan från början av projektet, då det hade underlättat resten av projektets gång.
 
-5:3
-
+5.3
 1.
 Teammedlemmar
 Albin Brahimi
@@ -90,7 +88,6 @@ Wille Norman
 
 2.
 https://github.com/addefrr/PA1489-3/tree/main
-
 
 3.
 Kort sammanfattning av vad vi har testat:
@@ -112,7 +109,6 @@ Testerna utfördes genom en enhetstestsession för BurgerOrderer-applikationen. 
     Vad gick mindre bra? Vi hade inget välorganiserat system för testning, och vissa tester gav inte de resultat vi förväntade oss, vilket skapade frustration.
     Hur löste ni svårigheterna? Genom att förbättra vår användning av debug-verktyg i Visual Studio Code, inklusive brytpunkter och stegvist körning, kunde vi hitta och rätta till många problem.
     Vad lyckades ni inte lösa? Vi kunde inte fullt ut förbättra alla testresultat, särskilt på grund av problem med datavalidering och bristen på ett enhetligt testsystem.
-
 
 Individuella ingengörsdagböcker:
 
