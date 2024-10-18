@@ -92,3 +92,17 @@ We worked together as a group and planned exactly what we will do tomorrow.
 2024-10-17
 
 Today our goal is to finish everything. Mikael told us that we had to change our layout to fit within the instructions, so that's exactly what we will do.
+
+I used the entire day to finish everything as planned, I changed the entire layout and worked exccesively with the database system to make it work regardless of who is trying to use it.
+For this I had to change the database technology to sqllite, which was way easier to use and saved me about a million headaches.
+
+I am happy with our final result and hope this is what the customer expected.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Debugging Session
+
+Together with the other members of the group we had a debugging session. Most of my time went into the planning of it, trying to gather data about the session and also explaining
+to the other members what my code was used for, so that they could better use their results of the unittests for their advantage.
+
+Probably the hardest part of this entire project, since we did not really have a great system for testing, we did some unittesting, but we were not happy with the results.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
