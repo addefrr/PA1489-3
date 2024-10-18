@@ -51,3 +51,8 @@ During the project, I chose to debug the test_send_data function in our unit tes
 I monitored the response variable to see the outcome of the order submission. Its initial value was a response object that I checked after sending a test order. By watching it, I saw how it changed based on whether the order was successful. I also tested different paths, like submitting various orders and even canceling one midway. This helped me see how the code paths changed and how the values of monitored variables were affected.
 
 Overall, the debugging session was a learning experience. I was able to understand where things went wrong and how to fix them. Initially, I had trouble with placing breakpoints but improved my skills over time. Debugging turned out to be a helpful tool for catching errors quickly and understanding the flow of my code better.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2024-10-18
+We went through our entire project together today after I had merged a branch with the main repo yesterday. Our work could be much better if we had used our time better and stuck more to the plan. It still feels pretty good because I learned a lot, like using Docker, HTML, Flask, MySQL and SQLite, basic unit testing with Python, documentation etc. Now I feel like a have a better "toolboox" for the future as Mikael Svahnberg calls it. 
