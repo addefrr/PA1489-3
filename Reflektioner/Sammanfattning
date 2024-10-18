@@ -21,14 +21,14 @@ Erfarenheter av konfigurationshantering
 Vad gick bra? 
 Vi lyckades bra med att använda Git för att spåra våra ändringar och samarbeta effektivt. Det gjorde det enklare att hantera versioner av vår kod och hålla reda på vad som ändrades.
 
-Vad gick mindre bra? 
-Vi stötte på problem med testning och databasen. Specifikt hade vi svårt att få databasen att fungera korrekt i vår Docker-miljö, vilket ledde till en hel del felmeddelanden som hindrade oss från att köra våra tester.
+Vad gick mindre bra?
+Även om Git fungerade bra för versionshantering, hade vi vissa utmaningar med att hantera konfigurationer och beroenden mellan olika miljöer. Ibland blev det svårt att hålla konfigurationsfiler konsekventa mellan teammedlemmarnas lokala miljöer och den gemensamma utvecklingsmiljön, vilket ledde till inkonsekvenser i körning av projektet.
 
-Hur löste ni svårigheterna? 
-Vi spenderade tid på felsökning och diskussioner för att förstå problemen. Genom att arbeta tillsammans och göra ändringar i vår konfiguration kunde vi så småningom få databasen att fungera. Vi insåg också att vi borde ha planerat vår tid mycket bättre för testning och debugging.
+Hur löste ni svårigheterna?
+Vi löste utmaningarna genom att vara noga med att dokumentera alla nödvändiga konfigurationsändringar i vårt versionshanteringssystem. Vi använde Git för att spåra förändringar i konfigurationsfiler och såg till att varje utvecklare uppdaterade sin miljö manuellt baserat på dessa ändringar. Genom att skapa tydliga commit-meddelanden och regelbundet kommunicera i teamet kunde vi undvika större misstag och säkerställa att alla arbetade med samma uppsättning inställningar.
 
-Vad lyckades ni inte lösa? 
-Trots våra ansträngningar kvarstod vissa problem med testningen, vilket gjorde det svårt att validera vår kod fullständigt. Vi insåg att vi kunde ha förberett oss bättre genom att börja med testningen tidigare i projektet.
+Vad lyckades ni inte lösa?
+Vi lyckades inte fullt ut automatisera alla delar av vår konfigurationshantering, vilket innebar att vissa manuella justeringar fortfarande behövde göras beroende på teammedlemmarnas lokala system. Detta ledde till viss ineffektivitet och risk för misstag vid uppdateringar.
 
 4.3
 1.
