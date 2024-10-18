@@ -80,7 +80,21 @@ Vad gick mindre bra?
 Hur löste ni svårigheterna? Hade ni kunnat göra annorlunda?
     Vi lyckades lösa svårigheterna efter många youtube tutorials. Det vi hade kunnat göra annorlunda hade varit om vi försökte använda containers redan från början av projektet, då det hade underlättat resten av projektets gång.
 
+5:3
 
+1.
+Teammedlemmar
+Albin Brahimi
+Ardian Qeriqi
+Wille Norman
+
+2.
+https://github.com/addefrr/PA1489-3/tree/main
+
+
+3.
+Kort sammanfattning av vad vi har testat:
+Vi har testat alla funktioner i burgerorderer och kitchen view så att alla knappar och funktionaliteter på front endes fungerar som det ska. Vi har också testat data kommunikationen mellan dessa två och datahanteringen i databasen så allt sparas och kan skickas vidare. 
 
 4. 
 Kort sammanfattning om hur ni har genomfört testerna:
